@@ -52,10 +52,52 @@ Escalador, ciclista e leitor
 
 ---
 
-## Programming basics
+## Programação com Python
 
-* Why Python?
-* What is Python?
-* Asses programming skills
-* Programming review
-* Homework
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" width="250">
+
+---
+
+### Por que Python?
+
+<img src="https://www.andreykurenkov.com/writing/images/2016-2-12-fun-visualizations-of-stackoverflow/14-occ_lang_rB.png" width="700">
+
+<p style="font-size:25px">Pesquisa anual do Stack Overflow</p>
+
+---
+
+### O que é Python
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" width="250">
+
+---
+
+### O que é Anaconda
+
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Anaconda_Logo.png/200px-Anaconda_Logo.png" width="250">
+
+Acesse este [link](https://www.anaconda.com/products/individual) para baixar a distribuição para seu sistema
+
+---
+
+### Teste de programação
+
+[Acesse o teste aqui](https://forms.gle/ebjoJp29LyCaFCEj7)
+
+Favor não consultar internet ou outras pessoas
+
+---
+
+### Revisão de Python
+
+Livro base é o [Pense em Python - pense como um cientista da computação](https://penseallen.github.io/PensePython2e/) por Allen B. Downey
+
+---
+
+### Exercícios de casa
+
+[Exercício 1.2.](https://penseallen.github.io/PensePython2e/01-jornada.html)  
+[Exercício 2.2.](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html)  
+[Exercício 6.2.](https://penseallen.github.io/PensePython2e/06-funcoes-result.html)  
+[Exercício 10.2.](https://penseallen.github.io/PensePython2e/10-listas.html)  
+[Exercício 15.1.](https://penseallen.github.io/PensePython2e/15-classes-objetos.html)  
