@@ -76,6 +76,79 @@ np.random.<tab>
 
 ---
 
+Acessando elementos
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+x1 = np.random.randint(10, size=6)  # One-dimensional array
+x2 = np.random.randint(10, size=(3, 4))
+x1[0]
+x1[-2]
+x2[0, 0]
+x2[2, -1]
+x2[0, 0] = 12
+  </code></pre>
+</section>
+
+---
+
+Fatiamento de elementos
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+# x[start:stop:step]
+x1[:5]   # primeiros cinco elementos
+x1[::2]  # cada dois elementos
+x1[::-1] # inversão dos elementos
+  </code></pre>
+</section>
+
+---
+
+Cópia de objetos
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+x2_sub = x2[:2, :2]
+x2_sub[0, 0] = 99
+# o que aconteceu com x2?
+x2_sub_copy = x2[:2, :2].copy() # fazendo uma cópia
+x2_sub_copy[0, 0] = 42
+# o que aconteceu com x2?
+  </code></pre>
+</section>
+
+---
+
+Reformatação de objetos
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+x = np.array([1, 2, 3])
+x.reshape((1, 3)) # row vector via reshape
+x[np.newaxis, :]  # row vector via newaxis
+x.reshape((3, 1)) # column vector via reshape
+x[:, np.newaxis]  # column vector via newaxis
+  </code></pre>
+</section>
+
+---
+
+Junção e separação de objetos
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+np.concatenate
+np.vstack
+np.hstack
+np.split
+np.vsplit
+np.hsplit
+  </code></pre>
+</section>
+
+---
+
 # Exercícios de casa
 
 Façam um pipelines para processamento de uma dataset escolhido
