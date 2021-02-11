@@ -149,6 +149,69 @@ np.hsplit
 
 ---
 
+Operações com numpy
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+def compute_reciprocals(values):
+    output = np.empty(len(values))
+    for i in range(len(values)):
+        output[i] = 1.0 / values[i]
+    return output
+big_array = np.random.randint(1, 100, size=1000000)
+
+%timeit compute_reciprocals(big_array)
+
+%timeit 1.0 / big_array
+  </code></pre>
+</section>
+
+---
+
+Operações com numpy
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+# suporte para  em np.array
+# operações agregação
+x = np.arange(1, 6)
+np.add.reduce(x)        # soma dos elementos
+np.add.accumulate(x)    # soma acumulada
+np.multiply.outer(x, x) # produto cartesiano
+  </code></pre>
+</section>
+
+---
+
+Sumarizando np.array
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+a = np.random.random(100)
+sum(a)
+np.sum(a)
+a.max()
+# soma com dados faltantes
+np.nansum(a)
+  </code></pre>
+</section>
+
+---
+
+Máscaras np.array
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+a = np.random.random(10)
+a > 5
+a[a>5]
+a[(a>5) & (a<7)]
+# suporte ao |/or e ~/not
+  </code></pre>
+</section>
+
+---
+
 # Exercícios de casa
 
 Façam um pipelines para processamento de uma dataset escolhido
