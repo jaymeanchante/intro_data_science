@@ -212,6 +212,22 @@ a[(a>5) & (a<7)]
 
 ---
 
+Dado o seguinte np.array
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+a = np.arange(25).reshape(5,5)
+  </code></pre>
+</section>
+
+1. Retorne os valores pares positivos menores que 14.
+2. Qual a média da segunda coluna?
+3. Qual a soma da quarta linha?
+4. Separe a última linha e transforme em um vetor coluna.
+5. Salve o objeto contendo o np.array em disco.
+
+---
+
 # Exercícios de casa
 
 Façam um pipelines para processamento de uma dataset escolhido
