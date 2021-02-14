@@ -228,6 +228,38 @@ a = np.arange(25).reshape(5,5)
 
 ---
 
+## pandas
+
+---
+
+### História
+
+Iniciado por [Wes McKinney](https://wesmckinney.com/) em 2008 quando ele trabalhava no mercado financeiro
+
+Começou como uma implementação em Python da API de dataframe do R
+
+Código aberto em 2009 e posterior apoio pela [NumFocus](https://numfocus.org/sponsored-projects)
+
+Livro base [Pyhon para Análise de dados](https://wesmckinney.com/pages/book.html)
+
+---
+
+### Séries
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+import pandas as pd
+
+vetor = pd.Series([0, 2, 4, 6])
+vetor
+
+vetor.values # np.array
+vetor.index  # 
+  </code></pre>
+</section>
+
+---
+
 # Exercícios de casa
 
 Façam um pipelines para processamento de uma dataset escolhido
