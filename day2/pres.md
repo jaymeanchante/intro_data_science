@@ -244,22 +244,81 @@ Livro base [Pyhon para Análise de dados](https://wesmckinney.com/pages/book.htm
 
 ---
 
-### Séries
+### Series
 
 <section>
   <pre><code data-trim data-noescape data-line-numbers>
-import pandas as pd
-
-vetor = pd.Series([0, 2, 4, 6])
-vetor
-
-vetor.values # np.array
-vetor.index  # 
+    import pandas as pd
+    data = pd.Series([0, 2, 4, 6])
+    # valores e índice são np.array
+    data.values
+    data.index
+    # acessando elementos pelo índice
+    data[-1]
+    data[:2]
   </code></pre>
 </section>
 
 ---
 
+### pd.Series vs np.array
+
+Uma das grandes diferenças está no índice. Ele pode ser não numérico, não sequencial.
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+    data = pd.Series([0.25, 0.5, 0.75, 1.0],
+                    index=['a', 'b', 'c', 'd'])
+    data["b"]
+  </code></pre>
+</section>
+
+---
+
+### pd.Series vs dict
+
+Uma das grandes diferenças está no índice. Ele pode ser não numérico, não sequencial.
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+population_dict = {'California': 38332521,
+                   'Texas': 26448193,
+                   'New York': 19651127,
+                   'Florida': 19552860,
+                   'Illinois': 12882135}
+population = pd.Series(population_dict)
+population['California':'Illinois']
+  </code></pre>
+</section>
+
+---
+
+### Dataframe
+
+Se o pd.Series pode ser comparados a um vetor unidimensional, o pd.DataFrame pode ser comparado a uma matrix bidimensional.
+
+O pd.DataFrame é como uma sequencia de pd.Series que compatilham o mesmo índice.
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+area_dict = {'California': 423967, 'Texas': 695662, 'New York': 141297,
+             'Florida': 170312, 'Illinois': 149995}
+area = pd.Series(area_dict)
+  </code></pre>
+</section>
+
+---
+
+### Dataframe a partir de series
+
+<section>
+  <pre><code data-trim data-noescape data-line-numbers>
+states = pd.DataFrame({'population': population,
+                       'area': area})
+  </code></pre>
+</section>
+
+---
 # Exercícios de casa
 
 Façam um pipelines para processamento de uma dataset escolhido
