@@ -1,12 +1,12 @@
-# dia 1 
+% Aula 1 - Apresentação da disciplina
+% Jayme Anchante
+% 22 de fevereiro de 2021
 
-introdução, ciência de dados e programação
+# introdução ao curso
 
----
+## apresentação pessoal
 
-### apresentação pessoal
-
-Economista: graduação e mestreado, especialização em ciência de dados
+Economista: graduação e mestrado, especialização em ciência de dados
 
 Cientista de dados: Contabilizei, 4all e Edenred
 
@@ -14,15 +14,13 @@ Escalador, ciclista e leitor
 
 [github](https://github.com/jaymeanchante); [linkedin](https://linkedin.com/in/jaymeanchante)
 
----
+## hora de vocês se apresentarem
 
-### hora de vocês se apresentarem
+![](images/class_1/students.jpg)
 
-![](https://studyinthestates.dhs.gov/sites/default/files/styles/blog_image/public/photodune-430950-students-in-a-classroom-m_0.jpg)
+[comment]: # (source: https://studyinthestates.dhs.gov/sites/default/files/styles/blog_image/public/photodune-430950-students-in-a-classroom-m_0.jpg)
 
----
-
-### o curso
+## o curso
 
 * dia 1 (22/2): introdução, ciência de dados e programação
 * dia 2 (23/2): processamento de dados com numpy e pandas
@@ -30,71 +28,67 @@ Escalador, ciclista e leitor
 * dia 4 (25/2): visualização de dados com matplotlib e SQL/metabase
 * dia 5 (01/3): projeto final
 
----
+# ciência de dados
 
-# Ciência de dados?
+## diagram de venn do cientista de dados
 
----
+![](images/class_1/ds_venn.png)
 
-<img src="http://2s7gjr373w3x22jf92z99mgm5w.wpengine.netdna-cdn.com/wp-content/uploads/2016/01/data-science-venn-diagram.png" alt="drawing" width="600"/>
+[comment]: # (source: http://2s7gjr373w3x22jf92z99mgm5w.wpengine.netdna-cdn.com/wp-content/uploads/2016/01/data-science-venn-diagram.png)
 
----
+## cientista de dados moderno
 
-<img src="https://www.gettingsmart.com/wp-content/uploads/2015/12/mds.png" alt="drawing" width="500"/>
+![](images/class_1/modern_ds.png)
 
----
+[comment]: # (source: https://www.gettingsmart.com/wp-content/uploads/2015/12/mds.png)
 
-<img src="http://chiefmartec.com/wp-content/uploads/2014/08/sexy_data_scientist.png" alt="drawing" width="1000"/>
+## profissão do cientista de dados
 
----
+![](images/class_1/ds_sexy.png)
 
-<img src="https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/04/data-science-use-cases.jpg" alt="drawing" width="1000"/>
+[comment]: # (source: http://chiefmartec.com/wp-content/uploads/2014/08/sexy_data_scientist.png)
 
----
+## casos de uso
 
-## Programação com Python
+![](images/class_1/ds_usecases.jpg)
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" width="250">
+[comment]: # (source: https://d2h0cx97tjks2p.cloudfront.net/blogs/wp-content/uploads/sites/2/2019/04/data-science-use-cases.jpg)
 
----
+# programação com python
 
-### Por que Python?
+## por que python?
 
-<img src="https://www.andreykurenkov.com/writing/images/2016-2-12-fun-visualizations-of-stackoverflow/14-occ_lang_rB.png" width="700">
+![Pesquisa anual do Stack Overflow](images/class_1/sof_skills.png)
 
-<p style="font-size:25px">Pesquisa anual do Stack Overflow</p>
+[comment]: # (source: https://www.andreykurenkov.com/writing/images/2016-2-12-fun-visualizations-of-stackoverflow/14-occ_lang_rB.png)
 
----
+## o que é python
 
-### O que é Python
+![](images/class_1/python_logo.png){ width=75px }
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png" width="250">
+[comment]: # (source: https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1200px-Python-logo-notext.svg.png)
 
----
+## o que é anaconda
 
-### O que é Anaconda
+![](images/class_1/anaconda_logo.png)
 
-<img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Anaconda_Logo.png/200px-Anaconda_Logo.png" width="250">
+[comment]: # (source: https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/Anaconda_Logo.png/200px-Anaconda_Logo.png)
 
 Acesse este [link](https://www.anaconda.com/products/individual) para baixar a distribuição para seu sistema
 
----
-
-### Teste de programação
+## teste de programação
 
 [Acesse o teste aqui](https://forms.gle/ebjoJp29LyCaFCEj7)
 
 Favor não consultar internet ou outras pessoas
 
----
-
-### Revisão de Python
+## revisão de Python
 
 Livro base é o [Pense em Python - pense como um cientista da computação](https://penseallen.github.io/PensePython2e/) por Allen B. Downey
 
----
+# exercícios de casa
 
-### Exercícios de casa
+## lista
 
 [Exercício 1.2.](https://penseallen.github.io/PensePython2e/01-jornada.html)  
 [Exercício 2.2.](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html)  
