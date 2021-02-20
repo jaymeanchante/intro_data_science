@@ -181,8 +181,6 @@ Começou como uma implementação em Python da API de dataframe do R
 
 Código aberto em 2009 e posterior apoio pela [NumFocus](https://numfocus.org/sponsored-projects)
 
-Livro base [Pyhon para Análise de dados](https://wesmckinney.com/pages/book.html)
-
 ## pd.Series
 
 ``` {.python .numberLines}
@@ -236,10 +234,278 @@ area = pd.Series(area_dict)
 ``` {.python .numberLines}
 states = pd.DataFrame({'population': population,
                        'area': area})
+states
+states.index
+states.columns
 ```
+
+## construção de pd.DataFrame
+
+``` {.python .numberLines}
+# a partir de series
+pd.DataFrame(population, columns='population')
+# a partir de listas
+data = [{'a': i, 'b': 2 * i} for i in range(3)]
+pd.DataFrame(data)
+# preenchimento com nan
+pd.DataFrame([{'a': 1, 'b': 2}, {'b': 3, 'c': 4}])
+# a partir de np.array
+pd.DataFrame(np.random.rand(3, 2),
+             columns=['foo', 'bar'],
+             index=['a', 'b', 'c'])
+```
+
+## índices em pandas
+
+Os índices são como arrays, porém são imutáveis
+
+``` {.python .numberLines}
+ind = pd.Index([2, 3, 5, 7, 11])
+ind[::2]
+# tentando colocar novo valor
+ind[1] = 0
+```
+
+## índices como sets
+
+Os índices são otimizados para joins e outras operações, baseado na lógica de sets.
+
+``` {.python .numberLines}
+indA = pd.Index([1, 3, 5, 7, 9])
+indB = pd.Index([2, 3, 5, 7, 11])
+indA & indB  # intersection
+indA | indB  # union
+indA ^ indB  # symmetric difference
+```
+
+## índices como dicts
+
+``` {.python .numberLines}
+data = pd.Series([0.25, 0.5, 0.75, 1.0],
+                 index=['a', 'b', 'c', 'd'])
+data['b']       # seleção valor
+'a' in data     # como dict
+data.keys()
+list(data.items())
+data.to_dict()
+data['e'] = 1.25 # inserção de nova chave
+```
+
+## pd.Series como vetor unidimensional
+
+``` {.python .numberLines}
+data['a':'c'] # índice explícito
+data[0:2]     # índice implícito
+data[(data > 0.3) & (data < 0.8)] # mask
+```
+
+## indexadores: loc, iloc, ix
+
+``` {.python .numberLines}
+data = pd.Series(['a', 'b', 'c'], index=[1, 3, 5])
+
+data[1]   # índice explícito
+data[1:3] # índice implícito
+# explícito com loc
+data.loc[1]
+data.loc[1:3]
+# implícito com iloc
+data.iloc[1]
+data.iloc[1:3]
+```
+
+> "Sempre" usar .loc!
+
+## dataframe como dict
+
+``` {.python .numberLines}
+data = pd.DataFrame({'area':area, 'pop':pop})
+# selecionar uma coluna
+data['area']              # como dict
+data.area                 # como atributo
+data.area is data['area'] # teste equivalência
+data.pop is data['pop']   # pop é uma método do obj, perigo!
+data['density'] = data['pop'] / data['area']
+```
+
+> Operações usar [column], para atribuições usar .loc!
+
+## dataframe como vetor bidimensional
+
+``` {.python .numberLines}
+data.values    # valores brutos
+data.T         # transposição
+data.values[0] # acessando 1a linha
+data['area']   # acessando coluna
+data.loc[
+  data.density > 100,
+  ['pop', 'density']
+  ]       # select pop, density where density>100
+```
+
+## operações em dataframe
+
+``` {.python .numberLines}
+df = pd.DataFrame(np.random.randint(0, 10, (3, 4)),
+                  columns=['A', 'B', 'C', 'D'])
+np.sin(df * np.pi / 4)  # operações com np e pd
+```
+
+## dados faltantes
+
+Duas estratégias principais:
+
+* usando um indicador (V/F) de presença de dados faltantes
+* usando um valor reservado para representar um dado faltante; e.g. -9999 or NaN
+
+Como pandas segue numpy, não existe a noção de NA fora do tipo ponto flutuante
+
+Existem dois valores reservados: NaN (numpy) e None (python)
+
+## None
+
+``` {.python .numberLines}
+vals1 = np.array([1, None, 3, 4])
+vals1 # inferência de tipo é python object
+```
+
+``` {.python .numberLines}
+# ineficiência da operação em object
+for dtype in ['object', 'int']:
+    print("dtype =", dtype)
+    %timeit np.arange(1E6, dtype=dtype).sum()
+    print()
+```
+
+``` {.python .numberLines}
+vals1.sum()
+```
+
+## NaN
+
+``` {.python .numberLines}
+vals2 = np.array([1, np.nan, 3, 4]) 
+vals2.dtype
+```
+
+``` {.python .numberLines}
+1 + np.nan
+vals2.sum(), vals2.min(), vals2.max()
+np.nansum(vals2), np.nanmin(vals2), np.nanmax(vals2)
+```
+
+## pandas: None e NaN
+
+None e NaN são intercambiáveis em pandas
+
+``` {.python .numberLines}
+pd.Series([1, np.nan, 2, None])
+
+x = pd.Series(range(2), dtype=int)
+x    # int
+x[0] = None
+x    # float
+```
+
+## operações em nulos
+
+``` {.python .numberLines}
+data = pd.Series([1, np.nan, 'hello', None])
+data.isnull()
+data.notnull()
+data.dropna()
+data.fillna()
+```
+
+> Não fazer comparações diretas como `data == np.nan`!
+
+## combinação de dados com numpy: concat
+
+``` {.python .numberLines}
+linha = [1,2,3]
+np.concatenate([linha, linha, linha])
+```
+
+``` {.python .numberLines}
+matriz = [[1, 2], [3, 4]]
+np.concatenate([matriz, matriz])
+```
+
+## combinação de dados com pandas: concat
+
+``` {.python .numberLines}
+ser1 = pd.Series(['A', 'B', 'C'], index=[1, 2, 3])
+pd.concat([ser1, ser1])
+pd.concat([ser1, ser1], axis=1) # ou axis='columns'
+pd.concat([ser1, ser1], ignore_index=True)
+```
+
+``` {.python .numberLines}
+def d(): return np.random.randint(1, 10, (5,2))
+df1 = pd.DataFrame(d(), columns=['a', 'b'])
+df2 = pd.DataFrame(d(), columns=['a', 'c'])
+pd.concat([df1, df2])
+pd.concat([df1, df2], axis=1)
+df1.append(df2)
+```
+
+## combinação de dados: merge
+
+``` {.python .numberLines}
+pd.merge(df1, df2)
+pd.merge(df1, df2, on='a')       # explicitando chave
+pd.merge(df1, df2, how='outer')
+```
+
+## agregação e agrupamento
+
+Vamos usar um dataset do pacote seaborn
+
+``` {.python .numberLines}
+import seaborn as sns
+planets = sns.load_dataset('planets')
+planets.shape
+planets.head()
+```
+
+``` {.python .numberLines}
+planets.describe()
+planets.mean()
+# quantidade de planetas descobertos / ano
+planets.groupby('year')['number'].sum()
+# mediana período orbitas / método
+planets.groupby('method')['orbital_period'].median()
+```
+
+## vetorização de operações com apply
+
+Aplicação de uma função genérica especifica em python puro
+
+``` {.python .numberLines}
+def add2(x):
+  return x + 2
+df = pd.DataFrame(d(), columns=['col1', 'col2'])
+df.apply(add2)
+df['col1'].apply(add2)
+```
+
+## trabalhando com texto
+
+``` {.python .numberLines}
+data = ['peter', 'Paul', None, 'MARY', 'gUIDO']
+[s.capitalize() for s in data]
+names = pd.Series(data)
+names.str.capitalize()
+```
+
+## mais recursos
+
+Livro [Pyhon para Análise de dados](https://wesmckinney.com/pages/book.html) do autor do pacote pandas
+
+Vídeos nas conferências PyCon, SciPy e PyData podem ser encontrados no [PyVideo](http://pyvideo.org/search?q=pandas)
 
 # exercícios de casa
 
 ## lista
 
-Façam um pipelines para processamento de uma dataset escolhido
+Façam um pipeline para processamento de uma dataset escolhido
