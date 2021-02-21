@@ -319,7 +319,7 @@ data.loc[1:3]
 data.iloc[1]
 data.iloc[1:3]
 ```
-
+\
 > "Sempre" usar .loc!
 
 ## dataframe como dict
@@ -333,7 +333,7 @@ data.area is data['area'] # teste equivalência
 data.pop is data['pop']   # pop é uma método do obj, perigo!
 data['density'] = data['pop'] / data['area']
 ```
-
+\
 > Operações usar [column], para atribuições usar .loc!
 
 ## dataframe como vetor bidimensional
@@ -374,7 +374,7 @@ Existem dois valores reservados: NaN (numpy) e None (python)
 vals1 = np.array([1, None, 3, 4])
 vals1 # inferência de tipo é python object
 ```
-
+\
 ``` {.python .numberLines}
 # ineficiência da operação em object
 for dtype in ['object', 'int']:
@@ -382,7 +382,7 @@ for dtype in ['object', 'int']:
     %timeit np.arange(1E6, dtype=dtype).sum()
     print()
 ```
-
+\
 ``` {.python .numberLines}
 vals1.sum()
 ```
@@ -393,7 +393,7 @@ vals1.sum()
 vals2 = np.array([1, np.nan, 3, 4]) 
 vals2.dtype
 ```
-
+\
 ``` {.python .numberLines}
 1 + np.nan
 vals2.sum(), vals2.min(), vals2.max()
@@ -422,7 +422,7 @@ data.notnull()
 data.dropna()
 data.fillna()
 ```
-
+\
 > Não fazer comparações diretas como `data == np.nan`!
 
 ## combinação de dados com numpy: concat
@@ -473,7 +473,7 @@ planets = sns.load_dataset('planets')
 planets.shape
 planets.head()
 ```
-
+\
 ``` {.python .numberLines}
 planets.describe()
 planets.mean()
