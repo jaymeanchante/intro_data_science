@@ -1,4 +1,4 @@
-% Aula 2 - numpy e pandas
+% Aula 2 - processamento de dados com numpy e pandas
 % Jayme Anchante
 % 23 de fevereiro de 2021
 
@@ -6,11 +6,9 @@
 
 ## software
 
-* git
-* anaconda
-  - virtual environments
-  - reproducibility
-* jupyter
+* git: versionamento de código
+* anaconda: ambientes isolados, reproducibilidade
+* jupyter: interface gráfica
 
 # numpy
 
@@ -299,6 +297,14 @@ data[0:2]     # índice implícito
 data[(data > 0.3) & (data < 0.8)] # mask
 ```
 
+## exercícios
+
+1. Crie uma série cujo índice são nomes e cujos valores são idades (use suas informações, de seus amigos e familiares)
+2. Teste se 'João' está nos nomes
+3. Retorne a última idade
+4. Retorne as idades maiores que 65
+5. Retorne as idades maiores que 18 e menos que 35
+
 ## indexadores: loc, iloc, ix
 
 ``` {.python .numberLines}
@@ -504,8 +510,25 @@ Livro [Pyhon para Análise de dados](https://wesmckinney.com/pages/book.html) do
 
 Vídeos nas conferências PyCon, SciPy e PyData podem ser encontrados no [PyVideo](http://pyvideo.org/search?q=pandas)
 
+## exercícios
+
+Usando a base de planetas:
+
+1. Mostre os métodos e distâncias após o ano de 2010
+2. Calcule o período orbitas vezes massa dividido pela distância
+3. Quantos valores nulos existem em cada coluna?
+4. Quantas planetas foram descobertos por cada método.
+5. Remova os espaços vazios e coloque em caixa baixa a coluna método.
+
 # exercícios de casa
 
 ## lista
 
-Façam um pipeline para processamento de uma dataset escolhido
+Usando a base de dados de [antibióticos](https://raw.githubusercontent.com/plotly/datasets/master/Antibiotics.csv), responda:
+
+1. Leia a base e atribua a um objeto chamado df
+2. Quantas bactérias do tipo "Streptococcus" existem?
+3. Qual o maior e menor valor de neomicina? E a qual bactéria estão associados?
+4. Quantas bactérias existem por tipo de grama?
+5. Crie uma nova coluna chamada "valor" sendo a penicilina vezes a estreptomicina dividido pela neomicina.
+6. Salve os dados com essa nova coluna num arquivo chamado "antibioticos.csv" sem o índice e com separador de ";".
