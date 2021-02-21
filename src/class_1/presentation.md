@@ -16,6 +16,8 @@ Escalador, ciclista e leitor
 
 ## hora de vocês se apresentarem
 
+Favor ligar a câmera e mantê-la ligada, o curso é para vocês, então seu feedback e sua participação é essencial!
+
 ![](images/class_1/students.jpg)
 
 [comment]: # (source: https://studyinthestates.dhs.gov/sites/default/files/styles/blog_image/public/photodune-430950-students-in-a-classroom-m_0.jpg)
