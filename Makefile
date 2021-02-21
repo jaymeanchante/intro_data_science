@@ -16,3 +16,6 @@ docs/pdf/class_5/presentation.pdf: src/class_5/presentation.md
 
 $(TARGETS):
 	mkdir -p `echo $@ | sed 's|\(.*\)/.*|\1|'` && $(PANDOC) $^ -o $@
+
+project_template: src/class_5/project_template.md
+	pandoc --to=pptx $< -o docs/pdf/class_5/project_template.pptx
