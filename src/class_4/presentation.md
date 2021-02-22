@@ -2,6 +2,12 @@
 % Jayme Anchante
 % 25 de fevereiro de 2021
 
+# base de dados exemplo
+
+## sqlite chinook
+
+Base disponibilidade pelo site [sqlitetutorial](https://www.sqlitetutorial.net/sqlite-sample-database/)
+
 # metabase
 
 ## por que metabase?
@@ -21,6 +27,11 @@ Vantagens:
 * Simplicidade, portabilidade, baixo custo de entrada/saída
 
 ## instalação
+
+1. Instalar java na sua máquina [acessando este link](https://java.com/en/download/manual.jsp)
+2. Baixar metabase no [site oficial](https://www.metabase.com/start/oss/)
+
+Abrir o explorador de arquivos, navegar até a pasta de downloads, abrir uma linha de comando no diretório atual, e rodar `java -jar metabase.jar`. Se tudo der certo, abrir o navegador na url `localhost:3000` e seguir o passo a passo
 
 ## apresentação da ferramenta
 
