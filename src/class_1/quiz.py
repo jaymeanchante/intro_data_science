@@ -2,7 +2,7 @@ import json
 import statistics
 import pandas as pd
 
-configs = json.load(open("day1/config.json"))
+configs = json.load(open("./config.json"))
 quiz_url = configs["quiz_url"]
 df = pd.read_csv(quiz_url)
 
