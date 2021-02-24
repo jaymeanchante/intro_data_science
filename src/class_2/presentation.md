@@ -506,7 +506,7 @@ names.str.capitalize()
 
 ## mais recursos
 
-Livro [Pyhon para Análise de dados](https://wesmckinney.com/pages/book.html) do autor do pacote pandas
+Livro [Python para Análise de dados](https://wesmckinney.com/pages/book.html) do autor do pacote pandas
 
 Vídeos nas conferências PyCon, SciPy e PyData podem ser encontrados no [PyVideo](http://pyvideo.org/search?q=pandas)
 
@@ -517,14 +517,14 @@ Usando a base de planetas:
 1. Mostre os métodos e distâncias após o ano de 2010
 2. Calcule o período orbitas vezes massa dividido pela distância
 3. Quantos valores nulos existem em cada coluna?
-4. Quantas planetas foram descobertos por cada método.
-5. Remova os espaços vazios e coloque em caixa baixa a coluna método.
+4. Quantos planetas foram descobertos por cada método.
+5. Remova os espaços do texto e coloque em caixa baixa a coluna método.
 
 # exercícios de casa
 
 ## lista
 
-Usando a base de dados de [antibióticos](https://raw.githubusercontent.com/plotly/datasets/master/Antibiotics.csv), responda:
+Usando a base de dados de [antibióticos](https://raw.githubusercontent.com/plotly/datasets/master/Antibiotics.csv) (clicar no link para acessar os dados), responda:
 
 1. Leia a base e atribua a um objeto chamado df
 2. Quantas bactérias do tipo "Streptococcus" existem?
