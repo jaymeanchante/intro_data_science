@@ -189,7 +189,7 @@ import sqlite3
 import pandas as pd
 conn = sqlite3.connect("chinook.db")
 # define sql query as string
-pd.read_csv(sql, conn)
+pd.read_sql(sql, conn)
 ```
 
 ## exercícios
