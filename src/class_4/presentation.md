@@ -379,4 +379,4 @@ Caso tenham dificuldades em encontrar datasets, aqui vão algumas sugestões:
 
 ## template
 
-O template indicado pode ser [encontrado aqui](docs/pdf/class_5/project_template.pptx)
+O template indicado pode ser [encontrado aqui](pdf/class_5/project_template.pptx)
