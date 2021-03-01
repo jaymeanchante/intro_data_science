@@ -62,7 +62,7 @@ Sendo os dados de $X$ e $y$:
 ``` {.python .numberLines}
 import numpy as np
 rng = np.random.RandomState(42)
-e = rng.random(100)
+e = rng.random(100) * rng.randint(1, 50)
 beta_0 = 3
 beta_1 = 1.5
 X = np.linspace(1, 100, 100)
